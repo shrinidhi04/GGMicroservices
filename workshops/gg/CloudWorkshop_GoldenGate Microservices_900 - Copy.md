@@ -10,9 +10,25 @@ In this lab, you will take a look at how to pull a list of services from Oracle 
 Steps:
 1. Open a command window (right mouse click – Open Terminal)
 
-2. Create a json file for building an integrated extract .
+2. Create a json file for building an integrated   extract .
 
 ![](images/2019/extract_add.PNG)
+
+3. Start the extract using the Curl Command, which would start the extract with begin-now option.
+
+![](images/2019/2.PNG)
+
+4. After the command is executed successfully, the command output looks like this:
+
+![](images/2019/3.PNG)
+
+5. On the Goldengate Microservices Console, under the Admin Server you can see the Extract has been started and running .
+
+![](images/2019/4.PNG)
+
+
+
+
 
 Try running the following CURL command.
 curl -u oggadmin:welcome1 -H "Content-Type: application/json" -H "Accept:
