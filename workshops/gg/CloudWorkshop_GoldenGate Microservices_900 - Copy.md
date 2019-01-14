@@ -22,6 +22,8 @@ Steps:
 
 ![](images/2019/3.PNG)
 
+![](images/2019/4.PNG)
+
 5. On the Goldengate Microservices Console, under the Admin Server you can see the Extract has been started and running .
 
 ![](images/2019/4.PNG)
