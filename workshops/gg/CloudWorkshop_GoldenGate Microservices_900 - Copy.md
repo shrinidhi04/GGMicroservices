@@ -36,9 +36,19 @@ Steps:
 
 ![](images/2019/6.PNG)
 
-8. Once the command is executed successfully, you can check on Goldengate Microservices Web Console under Distribution Server .
+8. Once the command is executed successfully, you can check on Goldengate Microservices Web Console under Distribution Server for the PATH created  and its Running Status.
 
 ![](images/2019/7.PNG)
+
+9.Next Step is to configure replicat on target which can be done by specifying the various configuration parameters for the Replicat in a JSON file as shown below:
+
+![](images/2019/8.PNG)
+
+10. In this Step, You just need to configure and create the Replicat and do not start it. Using the curl command we can add the replicat.
+
+![](images/2019/9.PNG)
+
+
 
 
 
