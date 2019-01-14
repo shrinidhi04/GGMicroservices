@@ -14,7 +14,7 @@ Steps:
 
 ![](images/2019/extract_add.PNG)
 
-3. Start the extract using the Curl Command, which would start the extract with begin-now option.
+3. Start the change-capture extract using the Curl Command, which would start the extract with begin-now option.
 
 ![](images/2019/2.PNG)
 
@@ -27,6 +27,19 @@ Steps:
 5. On the Goldengate Microservices Console, under the Admin Server you can see the Extract has been started and running .
 
 ![](images/2019/4.PNG)
+
+6. A path needs to be  created to send the transaction of data from the Extract to the Replicat. You can create a new path by adding configuration  in JSON file.
+
+![](images/2019/5.PNG)
+
+7. You can execute the following curl command to add the PATH to send data from Extract to replicat.
+
+![](images/2019/6.PNG)
+
+8. Once the command is executed successfully, you can check on Goldengate Microservices Web Console under Distribution Server .
+
+![](images/2019/7.PNG)
+
 
 
 
