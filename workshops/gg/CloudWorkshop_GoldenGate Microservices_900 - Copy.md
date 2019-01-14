@@ -1,6 +1,6 @@
 ![](images/900/Lab900_image100.PNG)
 
-Update August 7, 2018
+Update January 14, 2019
 
 ## Working with REST API
 ## Introduction
@@ -40,13 +40,35 @@ Steps:
 
 ![](images/2019/7.PNG)
 
-9.Next Step is to configure replicat on target which can be done by specifying the various configuration parameters for the Replicat in a JSON file as shown below:
+9. Next Step is to configure replicat on target which can be done by specifying the various configuration parameters for the Replicat in a JSON file as shown below:
 
 ![](images/2019/8.PNG)
 
-10. In this Step, You just need to configure and create the Replicat and do not start it. Using the curl command we can add the replicat.
+10. In this Step, You just need to configure and create the Replicat and do not start it (we will Start it at specific CSN after the export/import Job is done). Using the curl command we can add the replicat.
 
 ![](images/2019/9.PNG)
+
+11. Now it is time to get the current scn of the source database .So that all the  transactions after this particular CSN are only captured & Replicated (i.e we have to capture only those transactions that occur after the export Job)
+
+SQL> select current_scn from v$database;
+
+12. We need to create a JSON file to alter the Change-Capture Replicat at a particular CSN.
+
+![](images/2019/10.PNG)
+
+13. We finally need to start the replicat after the Export/import Job has finished successfully on target.We use the following Curl command to start the replicat, which refers to the JSON file created in last step.
+
+![](images/2019/11.PNG)
+
+14. Once the command is executed successfully you can crosscheck the status of the Replicat on Goldengate Microservices Web Console under the Admin Server of the Target.
+
+![](images/2019/12.PNG)
+
+
+
+
+ 
+
 
 
 
@@ -67,39 +89,3 @@ curl -u oggadmin:welcome1 -H "Content-Type:application/json" -H
 
 ![](images/800/Lab800_image101.png)
 
-Appendix:
-
-A: Run Swingbench
-Steps:
-1. Open a command terminal and navigate to the Swingbench bin directory (Figure A-1)
-$ cd /opt/app/oracle/product/swingbench/bin
-
-
-![](images/900/Lab900_image102.png)
-
-
-2. Execute the swingbench command (Figure A-2)
-$ ./swingbench
-
-![](images/900/Lab900_image103.png)
-
-3. Once Swingbench starts, select the SOE_Server_Side_V2 configuration file.
-
-![](images/900/Lab900_image104.png)
-
-4. Once Swingbench is open, update the Password, Connect String, and Benchmark Run
-Time (Figure A-4)
-Password: welcome1
-Connect String: //ogg123rs/pdb1
-Benchmark Run Time: 10 mins
-
-![](images/900/Lab900_image105.png)
-
-5. Execute Swingbench (Figure A-5)
-
-![](images/900/Lab900_image106.png)
-
-At this point you should see activity on the table by looking at the Extract/Replicats.
-Correct any problems that may arise due.
-
-At this point, you should have a fully functional REST Api environment. 
